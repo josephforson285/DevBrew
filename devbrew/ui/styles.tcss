@@ -92,3 +92,28 @@ HeaderClock {
     padding: 0 2;
     margin-top: 1;
 }
+
+/* --- Customize ---------------------------------------------------------- */
+
+#customize-frame {
+    width: 52;
+    height: auto;
+    border: solid #ff8c42;
+    padding: 0 1;
+    margin: 1 1 0 1;
+}
+
+#option-picker {
+    height: auto;
+    margin-bottom: 1;
+}
+
+#summary-title {
+    color: $text-muted;
+    text-style: bold;
+}
+
+#summary {
+    height: auto;
+    color: $text;
+}
