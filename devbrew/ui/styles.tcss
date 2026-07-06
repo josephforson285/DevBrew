@@ -1,0 +1,94 @@
+/* DevBrew terminal styling: classic console, keyboard-first, dark. */
+
+Screen {
+    background: $background;
+}
+
+/* Dark, minimal header: no title/icon, just the clock. */
+Header {
+    background: $background;
+    color: $text;
+}
+
+HeaderIcon,
+HeaderTitle {
+    display: none;
+}
+
+HeaderClock {
+    background: $background;
+    color: $text;
+}
+
+/* --- Console ------------------------------------------------------------ */
+
+#console {
+    width: 100%;
+    height: 100%;
+    padding: 0 1;
+}
+
+#logo {
+    color: #ff8c42;
+    text-style: bold;
+    height: auto;
+    margin-bottom: 1;
+}
+
+#output {
+    height: 1fr;
+    background: $background;
+    border: none;
+    scrollbar-size-vertical: 1;
+}
+
+#prompt-row {
+    height: 1;
+    margin-top: 1;
+}
+
+#prompt-sym {
+    width: auto;
+    height: 1;
+    color: #ff8c42;
+    text-style: bold;
+}
+
+#prompt-input {
+    border: none;
+    height: 1;
+    padding: 0;
+    background: $background;
+}
+
+/* --- Menu (classic '>' cursor list) ------------------------------------ */
+
+#menu-frame {
+    width: 64;
+    height: auto;
+    border: solid #ff8c42;
+    padding: 0 1;
+    margin: 1 1 0 1;
+}
+
+#menu-title {
+    color: #ff8c42;
+    text-style: bold;
+    margin-bottom: 1;
+}
+
+#menu-head {
+    color: $text-muted;
+    text-style: bold;
+}
+
+#menu-list {
+    height: auto;
+    background: $background;
+}
+
+#menu-hint {
+    color: $text-muted;
+    padding: 0 2;
+    margin-top: 1;
+}
