@@ -47,6 +47,7 @@ class MenuScreen(Screen):
         self.query_one(ArrowMenu).focus()
 
     def on_arrow_menu_selected(self, event: ArrowMenu.Selected) -> None:
+        from devbrew.ui.screens.customize import CustomizeScreen
+
         item = self._items[event.index]
-        # Customization is the next story (DVBRW-8); acknowledge the choice.
-        self.app.notify(f"{item.name} selected.", title="DevBrew")
+        self.app.push_screen(CustomizeScreen(item))
