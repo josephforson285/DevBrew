@@ -19,9 +19,8 @@
 
 ## Environment notes
 
-- Local development uses the `MLprojs` virtual environment (Python 3.14).
+- Locally at the time being, development uses the `MLprojs` virtual environment (Python 3.14).
 - CI pins Python **3.14** so the pipeline matches local development.
 - The MongoDB Atlas connection string lives in a gitignored `.env` file
   (see `.env.example`). It is **never** committed.
-- Tests and CI run **without** a live database: services talk to a repository
-  abstraction backed by an in-memory store when no `MONGODB_URI` is set.
+- Tests and CI run **without** a live database due to some reasons but I might change that.

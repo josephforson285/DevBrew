@@ -21,7 +21,7 @@ via reviewed pull requests, with green CI.
 
 ## What was demonstrated
 
-1. **Launch** `devbrew` → BrewOS-style terminal with the DEVBREW logo.
+1. **Launch** `devbrew` → Terminal style with the DEVBREW logo splash.
 2. **Register / login** at the `>` console prompt (guided name → email → phone;
    or `login <email>`). Session is remembered; invalid input shows a clear error.
 3. **Browse menu** — arrow-key list with a `>` cursor showing name, price, sizes,
@@ -36,11 +36,11 @@ via reviewed pull requests, with green CI.
 ## Acceptance criteria evidence
 
 - **DVBRW-6:** register with name/email/phone; login by email; session persists;
-  clear error on invalid input. Covered by `test_auth.py`, `test_console_screen.py`.
+  clear error on invalid input. 
 - **DVBRW-7:** view items; arrow-key navigation; each item shows name/price/sizes/
-  description; no crash on load. Covered by `test_menu.py`, `test_menu_screen.py`.
+  description; no crash on load. 
 - **DVBRW-8:** choose size/milk/sugar/extra shot; customization appears in the
-  order summary. Covered by `test_customization.py`, `test_customize_screen.py`.
+  order summary.
 
 ## Stakeholder feedback (this review)
 
@@ -52,17 +52,16 @@ The stakeholder reviewed the increment and raised two requests:
    friendly greeting using the user's name — e.g. *'Hi, Joseph — ready for a
    coffee?'*"
 
-Both are accepted into the product backlog for **Sprint 2** (see below). They are
-intentionally **not** applied to the closed Sprint 1 increment.
+Both are accepted into the product backlog for **Sprint 2** (see below).  
 
 ## New backlog items (proposed for Sprint 2)
 
 | Key | Story | Est. | Priority |
 |-----|-------|------|----------|
 | DVBRW-21 | Display prices in Rwandan Francs (RWF) | 2 | High |
-| DVBRW-22 | Personalised greeting after login | 2 | Medium |
+| DVBRW-22 | Personalised greeting after login | 1 | Medium |
 
-**DVBRW-21 - Display prices in Rwandan Francs**
+<!-- **DVBRW-21 - Display prices in Rwandan Francs**
 As a user in Rwanda, I want prices shown in RWF so amounts are relevant to me.
 - All prices display in RWF (e.g. `RWF 3,000`) instead of USD.
 - Menu, customization summary, and totals all use RWF.
@@ -72,4 +71,4 @@ As a user in Rwanda, I want prices shown in RWF so amounts are relevant to me.
 As a logged-in user, I want a greeting under the logo so the app feels personal.
 - After login, a greeting appears beneath the DEVBREW logo.
 - It uses the logged-in user's name, e.g. `Hi, Joseph — ready for a coffee?`.
-- Shown on the landing/menu screen.
+- Shown on the landing/menu screen. -->

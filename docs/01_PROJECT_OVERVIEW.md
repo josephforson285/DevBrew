@@ -9,7 +9,7 @@ and simulated real-time delivery tracking.
 
 ## Product Intent
 
-This project is built for an **Agile & DevOps assessment**. The goal is not only
+This project is a prototype built using **Agile & DevOps practices**. The goal is not only
 a working prototype, but a demonstration of Scrum planning, backlog management,
 sprint execution, a professional Git workflow, testing, CI/CD, and iterative
 delivery.
@@ -26,3 +26,5 @@ experience in the spirit of tools like Claude Code, GitHub CLI, lazygit, or htop
   Tracking, DVBRW-4 Developer Experience, DVBRW-5 DevOps & Monitoring
 - Jira is the single source of truth for stories, points, priorities, and
   acceptance criteria.
+
+Check out the [Jira backlog](https://amali-tech.atlassian.net/?continue=https%3A%2F%2Famali-tech.atlassian.net%2Fwelcome%2Fsoftware%3FprojectId%3D14816&atlOrigin=eyJpIjoiZjQxZjIyZDU0ODBmNGMxOTliNmUyYWQ5YTYzZDUyNTkiLCJwIjoiamlyYS1zb2Z0d2FyZSJ9).

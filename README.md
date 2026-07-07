@@ -1,67 +1,102 @@
-# DevBrew ☕
+# DevBrew
 
-A developer-first **terminal coffee ordering app** — order coffee from your
-terminal through a keyboard-driven TUI and CLI, with a modern developer
-experience and simulated real-time delivery tracking.
+A **terminal coffee ordering app** for developers — Log in, browse the menu,
+customize a drink, and place an order, all from a keyboard-driven terminal
+console. Just like claude code or lazygit. This is a prototype which is still a work in progress.
 
-> Built for an **Agile & DevOps** assessment: Scrum planning, backlog
-> management, sprint execution, a professional Git workflow, testing, and CI/CD.
-> Jira project: **DVBRW**.
+> Built to follow **Agile & DevOps** practices (Jira project **DVBRW**): Scrum
+> planning, backlog management, a branch-per-story Git workflow, automated
+> testing, and CI/CD.
 
 ## Status
 
-Sprint 1 (active, 2026-07-06 → 2026-07-20) — goal: log in, browse the coffee
-menu, and customize a drink.
+**Sprint 1 & Sprint 2 complete** — released as **v0.1.0**.
 
-- **DVBRW-6** Register and log into DevBrew
-- **DVBRW-7** Browse the coffee menu using keyboard navigation
-- **DVBRW-8** Customize coffee before ordering
+- **Sprint 1:** register/login, browse the coffee menu, customize a drink.
+- **Sprint 2:** prices in Rwandan Francs, personalised greeting, shopping cart,
+  delivery details, place order (saved to MongoDB), event logging, health check.
 
-See [`docs/`](docs/) for the full backlog, sprint plan, architecture, and
-Definition of Done.
+See [`docs/`](docs/) for the backlog, product vision, sprint plans, reviews, retrospectives,
+architecture, and Definition of Done.
+
+## Features
+
+- **Terminal console** — a `>` prompt for auth and commands, plus arrow-key screens.
+- **Auth** — register (name / email / phone) and log in by email; personalised greeting.
+- **Menu** — arrow-key list showing name, description, sizes, and price in **RWF**.
+- **Customize** — size, milk, sugar, and extra shot, with a live order summary.
+- **Cart** — add, change quantity, remove; subtotal & total.
+- **Delivery & order** — enter delivery details, review, and place an order
+  (unique order ID, **saved to MongoDB Atlas**, terminal confirmation).
+- **DevOps** — event logging to a file and a `devbrew health` command.
 
 ## Tech stack
 
 Python 3.11+ · [Textual](https://textual.textualize.io/) (TUI) ·
 [Typer](https://typer.tiangolo.com/) (CLI) · [Rich](https://rich.readthedocs.io/)
-· MongoDB Atlas (via pymongo) · pytest · ruff · GitHub Actions.
+· MongoDB Atlas (via pymongo) · pytest · ruff · GitHub Actions (CI + CD).
 
-## Getting started
+## Install
+
+From the published release (no clone needed):
 
 ```bash
-# 1. Use the project virtual environment (Python 3.14 / MLprojs) or create one:
+pip install "https://github.com/josephforson285/DevBrew/releases/download/v0.1.0/devbrew-0.1.0-py3-none-any.whl"
+```
+
+Or from source:
+
+```bash
+git clone https://github.com/josephforson285/DevBrew.git
+cd DevBrew
 python -m venv .venv && source .venv/bin/activate
-
-# 2. Install DevBrew with dev tooling
 pip install -e ".[dev]"
-
-# 3. Configure environment (optional — app runs in-memory without a DB)
-cp .env.example .env    # then paste your MongoDB Atlas URI into .env
-
-# 4. Run
-devbrew            # interactive terminal UI (arrives with Sprint 1 stories)
-devbrew --version  # print version
 ```
 
-The app runs **without a database** by default (in-memory repository). Set
-`MONGODB_URI` in `.env` to persist to MongoDB Atlas. `.env` is gitignored —
-never commit credentials.
+<!-- ## Configure (optional)
 
-## Development
+DevBrew runs **without a database** by default (in-memory). To persist users and
+orders to MongoDB Atlas:
 
 ```bash
-ruff check .       # lint
-pytest             # run tests
+cp .env.example .env      # then paste your Atlas URI into MONGODB_URI
 ```
 
-CI (GitHub Actions) runs ruff + pytest on every push and pull request.
+`.env` is gitignored — never commit credentials. -->
 
-## Contributing / workflow
+## Usage
 
-One feature branch per Jira story (`feature/DVBRW-<n>-<slug>`), small commits
-referencing the Jira key (`feat(DVBRW-6): ...`), PR into `main`, merge only when
-CI is green. No big-bang commits. See [`docs/AI_CONTEXT.md`](docs/AI_CONTEXT.md).
+```bash
+devbrew            # launch the terminal app
+devbrew --version  # print version
+devbrew health     # report application + database status
+```
 
-## License
+Inside the app: press **Enter** at the splash, then type commands at the `>`
+prompt — `register`, `login <email>`, `menu`, `cart`, `help`, `quit`. Navigate
+menus with **↑/↓**, select with **Enter** or **Tab**, go back with **Esc**. Events are
+logged to `logs/devbrew.log`. At the splash screen you can type `help` for list of commands. The current working prototype is on linux.
 
-MIT
+## Code Quality
+
+```bash
+ruff check .   # lint
+pytest         # run tests
+```
+
+## CI/CD
+
+- **CI** — GitHub Actions runs `ruff` + `pytest` on every push / pull request to
+  `main`; a red run blocks the merge.
+- **CD** — pushing a version tag (`vX.Y.Z`) lint+tests, builds the package, and
+  publishes a **GitHub Release** with the wheel and sdist.
+
+## Workflow
+
+One feature branch per Jira story (`feature/DVBRW-<n>), small commits
+referencing the Jira key (`feat(DVBRW-9): ...`), PR into `main`, merged only when
+CI is green. No big-bang commits.
+
+Check out the [Jira backlog](https://amali-tech.atlassian.net/?continue=https%3A%2F%2Famali-tech.atlassian.net%2Fwelcome%2Fsoftware%3FprojectId%3D14816&atlOrigin=eyJpIjoiZjQxZjIyZDU0ODBmNGMxOTliNmUyYWQ5YTYzZDUyNTkiLCJwIjoiamlyYS1zb2Z0d2FyZSJ9).
+
+<!-- ## License -->

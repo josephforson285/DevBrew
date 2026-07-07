@@ -1,7 +1,7 @@
 # 03 - Sprint 1 Plan
 
 - **Sprint:** DVBRW Sprint 1
-- **State:** Active
+- **State:** Done
 - **Dates:** 2026-07-06 → 2026-07-20
 - **Goal:** Deliver the first usable DevBrew terminal experience where a user can
   log in, browse the coffee menu, and customize a drink.
