@@ -26,5 +26,5 @@ experience in the spirit of tools like Claude Code, GitHub CLI, lazygit, or htop
   Tracking, DVBRW-4 Developer Experience, DVBRW-5 DevOps & Monitoring
 - Jira is the single source of truth for stories, points, priorities, and
   acceptance criteria.
-https://amali-tech.atlassian.net/jira/software/projects/DVBRW/boards/4833/backlog?atlOrigin=eyJpIjoiM2I4YTA3N2NkZDhmNDVjN2IwZGU3ZTliNTVkM2ZmYzYiLCJwIjoiaiJ9
+ 
 Check out the [Jira backlog](https://amali-tech.atlassian.net/jira/software/projects/DVBRW/boards/4833/backlog?atlOrigin=eyJpIjoiM2I4YTA3N2NkZDhmNDVjN2IwZGU3ZTliNTVkM2ZmYzYiLCJwIjoiaiJ9).
