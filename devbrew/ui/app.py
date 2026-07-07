@@ -9,9 +9,10 @@ from textual.binding import Binding
 
 from devbrew.models.cart import Cart
 from devbrew.models.delivery import DeliveryDetails
-from devbrew.repositories.factory import build_user_repository
+from devbrew.repositories.factory import build_order_repository, build_user_repository
 from devbrew.services.auth_service import AuthService
 from devbrew.services.menu_service import MenuService
+from devbrew.services.order_service import OrderService
 from devbrew.ui.screens.console import ConsoleScreen
 
 
@@ -23,10 +24,15 @@ class DevBrewApp(App):
 
     BINDINGS = [Binding("ctrl+q", "quit", "Quit")]
 
-    def __init__(self, auth_service: AuthService | None = None) -> None:
+    def __init__(
+        self,
+        auth_service: AuthService | None = None,
+        order_service: OrderService | None = None,
+    ) -> None:
         super().__init__()
         # Configured backend: MongoDB Atlas if a URI is set, else in-memory.
         self.auth = auth_service or AuthService(build_user_repository())
+        self.orders = order_service or OrderService(build_order_repository())
         self.menu = MenuService()
         self.cart = Cart()
         self.delivery: DeliveryDetails | None = None
@@ -51,3 +57,16 @@ class DevBrewApp(App):
         from devbrew.ui.screens.delivery import DeliveryScreen
 
         self.push_screen(DeliveryScreen())
+
+    def show_order_review(self) -> None:
+        """Open the order review / confirmation screen."""
+        from devbrew.ui.screens.order_review import OrderReviewScreen
+
+        self.push_screen(OrderReviewScreen())
+
+    def return_to_menu(self) -> None:
+        """Pop screens back to the coffee menu."""
+        from devbrew.ui.screens.menu import MenuScreen
+
+        while len(self.screen_stack) > 1 and not isinstance(self.screen, MenuScreen):
+            self.pop_screen()

@@ -92,4 +92,5 @@ class DeliveryScreen(Screen):
         self.query_one("#delivery-summary", Static).update("\n".join(details.summary_lines()))
         self.query_one("#delivery-sym", Label).update("✓ ")
         self.query_one("#delivery-input", Input).disabled = True
-        self._print("[green]✓[/] Delivery details saved.")
+        self._print("[green]✓[/] Delivery saved. Opening order review…")
+        self.app.show_order_review()
