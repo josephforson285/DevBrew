@@ -13,7 +13,7 @@ from devbrew.ui.logo import DEVBREW_ASCII
 from devbrew.ui.widgets.arrow_menu import ArrowMenu
 
 # Column widths for aligned rows: number, name, description, sizes, price.
-_HEADER = f"  {'#':<2} {'Name':<11} {'Description':<24} {'Sizes':<9}  {'Price':>6}"
+_HEADER = f"  {'#':<2} {'Name':<11} {'Description':<24} {'Sizes':<9}  {'Price':>10}"
 
 
 def _row(index: int, item: MenuItem) -> Text:
@@ -22,7 +22,7 @@ def _row(index: int, item: MenuItem) -> Text:
     row.append(f"{item.name:<11} ")
     row.append(f"{item.description:<24} ", style="dim")
     row.append(f"{item.sizes_label:<9}  ", style="dim")
-    row.append(f"{item.price_label:>6}", style="#ff8c42")
+    row.append(f"{item.price_label:>10}", style="#ff8c42")
     return row
 
 

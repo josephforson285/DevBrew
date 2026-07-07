@@ -5,10 +5,11 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 from devbrew.models.menu import MenuItem
+from devbrew.money import format_price
 
 MILK_OPTIONS: tuple[str, ...] = ("Whole", "Skim", "Oat", "Almond", "None")
 SUGAR_LEVELS: tuple[str, ...] = ("None", "Low", "Medium", "High")
-EXTRA_SHOT_PRICE = 0.50
+EXTRA_SHOT_PRICE = 500  # Rwandan Francs
 
 
 @dataclass(frozen=True)
@@ -37,7 +38,7 @@ class CustomizedDrink:
 
     @property
     def price_label(self) -> str:
-        return f"${self.total_price:.2f}"
+        return format_price(self.total_price)
 
     def summary_lines(self) -> list[str]:
         """Human-readable order summary lines."""

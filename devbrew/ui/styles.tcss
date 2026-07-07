@@ -64,7 +64,7 @@ HeaderClock {
 /* --- Menu (classic '>' cursor list) ------------------------------------ */
 
 #menu-frame {
-    width: 64;
+    width: 68;
     height: auto;
     border: solid #ff8c42;
     padding: 0 1;
