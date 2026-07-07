@@ -8,6 +8,7 @@ from textual.app import App
 from textual.binding import Binding
 
 from devbrew.models.cart import Cart
+from devbrew.models.delivery import DeliveryDetails
 from devbrew.repositories.factory import build_user_repository
 from devbrew.services.auth_service import AuthService
 from devbrew.services.menu_service import MenuService
@@ -28,6 +29,7 @@ class DevBrewApp(App):
         self.auth = auth_service or AuthService(build_user_repository())
         self.menu = MenuService()
         self.cart = Cart()
+        self.delivery: DeliveryDetails | None = None
 
     def on_mount(self) -> None:
         self.push_screen(ConsoleScreen())
@@ -43,3 +45,9 @@ class DevBrewApp(App):
         from devbrew.ui.screens.cart import CartScreen
 
         self.push_screen(CartScreen())
+
+    def show_delivery(self) -> None:
+        """Open the delivery details screen (Esc returns)."""
+        from devbrew.ui.screens.delivery import DeliveryScreen
+
+        self.push_screen(DeliveryScreen())

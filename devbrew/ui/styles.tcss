@@ -120,6 +120,47 @@ HeaderClock {
     color: $text;
 }
 
+/* --- Delivery ------------------------------------------------------------ */
+
+#delivery-frame {
+    width: 60;
+    height: auto;
+    border: solid #ff8c42;
+    padding: 0 1;
+    margin: 1 1 0 1;
+}
+
+#delivery-log {
+    height: 6;
+    background: $background;
+    border: none;
+}
+
+#delivery-row {
+    height: 1;
+    margin-top: 1;
+}
+
+#delivery-sym {
+    width: auto;
+    height: 1;
+    color: #ff8c42;
+    text-style: bold;
+}
+
+#delivery-input {
+    border: none;
+    height: 1;
+    padding: 0;
+    background: $background;
+}
+
+#delivery-summary {
+    height: auto;
+    margin-top: 1;
+    color: $text;
+}
+
 /* --- Customize ---------------------------------------------------------- */
 
 #customize-frame {
