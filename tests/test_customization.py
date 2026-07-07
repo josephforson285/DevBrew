@@ -9,7 +9,7 @@ from devbrew.models.customization import (
 )
 from devbrew.models.menu import MenuItem
 
-LATTE = MenuItem("latte", "Latte", "Espresso + steamed milk", 3.50, ("M", "L"))
+LATTE = MenuItem("latte", "Latte", "Espresso + steamed milk", 3500, ("M", "L"))
 
 
 def _drink(extra_shot: bool = False) -> CustomizedDrink:
@@ -24,12 +24,12 @@ def test_options_available():
 
 
 def test_extra_shot_adds_to_price():
-    assert _drink(extra_shot=False).total_price == 3.50
-    assert _drink(extra_shot=True).total_price == 3.50 + EXTRA_SHOT_PRICE
+    assert _drink(extra_shot=False).total_price == 3500
+    assert _drink(extra_shot=True).total_price == 3500 + EXTRA_SHOT_PRICE
 
 
 def test_price_label_formatting():
-    assert _drink(extra_shot=True).price_label == "$4.00"
+    assert _drink(extra_shot=True).price_label == "RWF 4,000"
 
 
 def test_summary_includes_every_choice():
@@ -39,4 +39,4 @@ def test_summary_includes_every_choice():
     assert "Oat" in summary
     assert "Low" in summary
     assert "Yes" in summary          # extra shot
-    assert "$4.00" in summary
+    assert "RWF 4,000" in summary
