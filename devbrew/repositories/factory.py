@@ -7,6 +7,7 @@ otherwise an in-memory store is used (local dev, tests, CI).
 from __future__ import annotations
 
 from devbrew.config import Settings, get_settings
+from devbrew.repositories.order_repository import InMemoryOrderRepository, OrderRepository
 from devbrew.repositories.user_repository import InMemoryUserRepository, UserRepository
 
 
@@ -23,3 +24,17 @@ def build_user_repository(settings: Settings | None = None) -> UserRepository:
         return MongoUserRepository(database["users"])
 
     return InMemoryUserRepository()
+
+
+def build_order_repository(settings: Settings | None = None) -> OrderRepository:
+    """Return an order repository appropriate for the current configuration."""
+    settings = settings or get_settings()
+
+    if settings.has_database:
+        from devbrew.database.mongo import get_database
+        from devbrew.repositories.mongo_order_repository import MongoOrderRepository
+
+        database = get_database(settings)
+        return MongoOrderRepository(database["orders"])
+
+    return InMemoryOrderRepository()

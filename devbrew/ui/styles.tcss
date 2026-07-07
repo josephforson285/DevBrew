@@ -120,6 +120,25 @@ HeaderClock {
     color: $text;
 }
 
+/* --- Order review -------------------------------------------------------- */
+
+#review-frame {
+    width: 66;
+    height: auto;
+    border: solid #ff8c42;
+    padding: 0 1;
+    margin: 1 1 0 1;
+}
+
+#review-body {
+    height: auto;
+}
+
+#review-status {
+    height: auto;
+    margin-top: 1;
+}
+
 /* --- Delivery ------------------------------------------------------------ */
 
 #delivery-frame {
