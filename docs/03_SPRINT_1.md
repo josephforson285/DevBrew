@@ -42,3 +42,8 @@ implemented this sprint (later stories DVBRW-9+).
 1. DVBRW-6 - auth basics, user model, register/login, session, tests.
 2. DVBRW-7 - menu data model, Textual menu screen, arrow-key nav, tests.
 3. DVBRW-8 - customization options, screen, validation, summary, tests.
+
+<br><br>
+<b> Evidence of Sprint1 jira workflow </b>
+
+<img width="1332" height="620" alt="image" src="https://github.com/user-attachments/assets/bec8eec7-8ed5-461c-85e0-1aeb2fd1a887" />
