@@ -61,6 +61,13 @@ HeaderClock {
     background: $background;
 }
 
+#greeting {
+    color: #ff8c42;
+    text-style: italic;
+    height: auto;
+    margin-bottom: 1;
+}
+
 /* --- Menu (classic '>' cursor list) ------------------------------------ */
 
 #menu-frame {
