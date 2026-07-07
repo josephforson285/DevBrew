@@ -29,7 +29,10 @@ def _row(index: int, item: MenuItem) -> Text:
 class MenuScreen(Screen):
     """Browse the coffee menu with the arrow keys; Esc returns to the console."""
 
-    BINDINGS = [("escape", "app.pop_screen", "Back")]
+    BINDINGS = [
+        ("c", "view_cart", "Cart"),
+        ("escape", "app.pop_screen", "Back"),
+    ]
 
     def compose(self) -> ComposeResult:
         yield Header(show_clock=True)
@@ -41,8 +44,11 @@ class MenuScreen(Screen):
             yield Static("COFFEE MENU", id="menu-title")
             yield Static(_HEADER, id="menu-head")
             yield ArrowMenu(rows, id="menu-list")
-        yield Static("↑/↓ navigate   Enter select   Esc back", id="menu-hint")
+        yield Static("↑/↓ navigate   Enter customize   c cart   Esc back", id="menu-hint")
         yield Footer()
+
+    def action_view_cart(self) -> None:
+        self.app.show_cart()
 
     def _greeting(self) -> str:
         user = self.app.auth.current_user

@@ -17,7 +17,7 @@ from devbrew.errors import DevBrewError
 from devbrew.ui.logo import DEVBREW_ASCII
 
 WELCOME = "coffee-4-devs  ·  type 'help' to begin."
-HELP = "commands:  help  ·  register  ·  login <email>  ·  menu  ·  clear  ·  quit"
+HELP = "commands:  help  ·  register  ·  login <email>  ·  menu  ·  cart  ·  clear  ·  quit"
 
 
 class ConsoleScreen(Screen):
@@ -122,6 +122,11 @@ class ConsoleScreen(Screen):
         elif command == "menu":
             if self.app.auth.is_authenticated:
                 self.app.show_menu()
+            else:
+                self._print("[yellow]log in first:  login <email>[/]")
+        elif command == "cart":
+            if self.app.auth.is_authenticated:
+                self.app.show_cart()
             else:
                 self._print("[yellow]log in first:  login <email>[/]")
         else:
