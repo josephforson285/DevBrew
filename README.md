@@ -4,9 +4,12 @@ A **terminal coffee ordering app** for developers — Log in, browse the menu,
 customize a drink, and place an order, all from a keyboard-driven terminal
 console. Just like claude code or lazygit. This is a prototype which is still a work in progress.
 
+
 > Built to follow **Agile & DevOps** practices (Jira project **DVBRW**): Scrum
 > planning, backlog management, a branch-per-story Git workflow, automated
 > testing, and CI/CD.
+<br>
+<img width="1020" height="600" alt="Screenshot From 2026-07-07 20-47-55" src="https://github.com/user-attachments/assets/b1e5393c-2436-44a9-b3f1-579c3dab071b" />
 
 ## Status
 
