@@ -1,6 +1,6 @@
 """Pilot tests for the menu screen: load and arrow-key navigation (DVBRW-7)."""
 
-from textual.widgets import Input
+from textual.widgets import Input, Static
 
 from devbrew.repositories.user_repository import InMemoryUserRepository
 from devbrew.services.auth_service import AuthService
@@ -32,6 +32,16 @@ async def test_menu_loads_without_crashing():
         assert isinstance(app.screen, MenuScreen)
         menu = app.query_one(ArrowMenu)
         assert menu.count >= 3
+
+
+async def test_greeting_shows_logged_in_user_name():
+    app = make_app()
+    async with app.run_test() as pilot:
+        await _login_to_menu(pilot, app)  # logs in as Joseph
+
+        greeting = str(app.query_one("#greeting", Static).renderable)
+        assert "Joseph" in greeting
+        assert "coffee" in greeting.lower()
 
 
 async def test_arrow_keys_move_the_cursor():

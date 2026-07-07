@@ -34,6 +34,7 @@ class MenuScreen(Screen):
     def compose(self) -> ComposeResult:
         yield Header(show_clock=True)
         yield Static(DEVBREW_ASCII.strip("\n"), id="logo")
+        yield Static(self._greeting(), id="greeting")
         self._items = self.app.menu.list_items()
         rows = [_row(i, item) for i, item in enumerate(self._items, start=1)]
         with Vertical(id="menu-frame"):
@@ -42,6 +43,11 @@ class MenuScreen(Screen):
             yield ArrowMenu(rows, id="menu-list")
         yield Static("↑/↓ navigate   Enter select   Esc back", id="menu-hint")
         yield Footer()
+
+    def _greeting(self) -> str:
+        user = self.app.auth.current_user
+        name = user.name if user else "there"
+        return f"Hi, {name} — ready for a coffee?"
 
     def on_mount(self) -> None:
         self.query_one(ArrowMenu).focus()
