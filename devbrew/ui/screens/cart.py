@@ -14,7 +14,10 @@ from devbrew.ui.widgets.cart_view import CartView
 class CartScreen(Screen):
     """Review the cart: change quantities, remove items, see subtotal/total."""
 
-    BINDINGS = [("escape", "app.pop_screen", "Back")]
+    BINDINGS = [
+        ("enter", "checkout", "Checkout"),
+        ("escape", "app.pop_screen", "Back"),
+    ]
 
     def compose(self) -> ComposeResult:
         yield Header(show_clock=True)
@@ -22,8 +25,17 @@ class CartScreen(Screen):
             yield Static("YOUR CART", id="menu-title")
             yield CartView(self.app.cart, id="cart-view")
             yield Static(id="cart-summary")
-        yield Static("↑/↓ select   +/- quantity   x remove   Esc back", id="menu-hint")
+        yield Static(
+            "↑/↓ select   +/- quantity   x remove   Enter checkout   Esc back",
+            id="menu-hint",
+        )
         yield Footer()
+
+    def action_checkout(self) -> None:
+        if self.app.cart.is_empty:
+            self.app.notify("Your cart is empty.", severity="warning")
+            return
+        self.app.show_delivery()
 
     def on_mount(self) -> None:
         self.query_one(CartView).focus()
