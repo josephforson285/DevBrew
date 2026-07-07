@@ -41,8 +41,31 @@
 **Quality evidence:** 87 automated tests (unit + headless Textual UI tests + CLI
 tests), ruff clean, GitHub Actions CI passing on every PR.
 
-*(Screenshots to be attached: menu in RWF, greeting, cart, delivery, order
-confirmation, `devbrew health` output.)*
+<br>
+<b> SHOT 4 </b>
+<img width="1183" height="693" alt="Screenshot From 2026-07-07 20-49-42" src="https://github.com/user-attachments/assets/39d9fb83-44da-4e8d-bc29-1e19110540a3" />
+
+<br><br>
+
+<b> SHOT 5 </b>
+
+<img width="587" height="633" alt="Screenshot From 2026-07-07 22-51-44" src="https://github.com/user-attachments/assets/01306059-1cd3-4ea9-8f04-77d7a02e118f" />
+
+<br><br>
+
+<b> SHOT 6 </b>
+<img width="1172" height="693" alt="Screenshot From 2026-07-07 22-54-27" src="https://github.com/user-attachments/assets/8599ab40-c74f-4e3e-9e1b-d68f2a9ba5d2" />
+
+<br><br>
+
+<b> SHOT 7 - Logs </b>
+<img width="1181" height="580" alt="image" src="https://github.com/user-attachments/assets/e695bb97-6a4a-4501-aabe-dc83e34e0eea" />
+
+<br><br>
+
+<b> SHOT 7 - Monitoring health and sys check </b>
+<img width="1181" height="293" alt="Screenshot From 2026-07-07 22-59-01" src="https://github.com/user-attachments/assets/58babff2-b576-4a48-bbc1-b699b23e61dd" />
+
 
 ## Stakeholder feedback (this review)
 
