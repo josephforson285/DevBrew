@@ -30,8 +30,23 @@ via reviewed pull requests, with green CI.
    updates with the total (extra shot +$0.50).
 5. **Quality evidence** — 41 automated tests (unit + headless Textual UI tests),
    `ruff` clean, GitHub Actions CI passing on every PR.
+<br>
+<b> SHOT 1 </b>
 
-*(Screenshots to be attached: splash, console login, menu, customize screen.)*
+<img width="1178" height="694" alt="Screenshot From 2026-07-07 22-09-56" src="https://github.com/user-attachments/assets/d382abbe-ee04-4252-b71e-00d2f9a979eb" />
+
+<br><br>
+
+<b> SHOT 2 </b>
+
+<img width="894" height="335" alt="image" src="https://github.com/user-attachments/assets/7066e114-4e8d-4a25-9e4c-8bb427d26be5" />
+
+
+
+<br><br>
+<b> SHOT 3 </b>
+<img width="1178" height="694" alt="Screenshot From 2026-07-07 22-23-11" src="https://github.com/user-attachments/assets/1da2045b-de86-4bbe-87d3-c3abbd8d7605" />
+
 
 ## Acceptance criteria evidence
 
