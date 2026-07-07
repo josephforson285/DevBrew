@@ -67,7 +67,9 @@ class CustomizeScreen(Screen):
 
     def on_option_picker_confirmed(self, event: OptionPicker.Confirmed) -> None:
         drink = self._current_drink()
+        self.app.cart.add(drink)
         self.app.notify(
-            f"{drink.item.name} ({drink.customization.size}) - {drink.price_label}",
-            title="Added to order",
+            f"Added {drink.item.name} to cart ({drink.price_label}). Press 'c' to view cart.",
+            title="Cart",
         )
+        self.app.pop_screen()
