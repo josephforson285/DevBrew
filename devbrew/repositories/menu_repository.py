@@ -11,14 +11,15 @@ from abc import ABC, abstractmethod
 
 from devbrew.models.menu import MenuItem
 
+# Prices are in Rwandan Francs (RWF).
 _DEFAULT_MENU: tuple[MenuItem, ...] = (
-    MenuItem("espresso", "Espresso", "Strong and bold shot", 2.50, ("S", "M")),
-    MenuItem("americano", "Americano", "Espresso + hot water", 3.00, ("S", "M", "L")),
-    MenuItem("latte", "Latte", "Espresso + steamed milk", 3.50, ("M", "L")),
-    MenuItem("cappuccino", "Cappuccino", "Espresso + milk foam", 3.75, ("M", "L")),
-    MenuItem("flat-white", "Flat White", "Smooth and creamy", 3.60, ("M",)),
-    MenuItem("mocha", "Mocha", "Espresso + chocolate", 4.00, ("M", "L")),
-    MenuItem("cold-brew", "Cold Brew", "Chilled and refreshing", 3.75, ("M", "L")),
+    MenuItem("espresso", "Espresso", "Strong and bold shot", 2500, ("S", "M")),
+    MenuItem("americano", "Americano", "Espresso + hot water", 3000, ("S", "M", "L")),
+    MenuItem("latte", "Latte", "Espresso + steamed milk", 3500, ("M", "L")),
+    MenuItem("cappuccino", "Cappuccino", "Espresso + milk foam", 3750, ("M", "L")),
+    MenuItem("flat-white", "Flat White", "Smooth and creamy", 3600, ("M",)),
+    MenuItem("mocha", "Mocha", "Espresso + chocolate", 4000, ("M", "L")),
+    MenuItem("cold-brew", "Cold Brew", "Chilled and refreshing", 3750, ("M", "L")),
 )
 
 

@@ -19,5 +19,5 @@ def test_each_item_has_required_fields():
 
 def test_labels_are_formatted():
     latte = next(i for i in MenuService().list_items() if i.id == "latte")
-    assert latte.price_label == "$3.50"
+    assert latte.price_label == "RWF 3,500"
     assert latte.sizes_label == "M / L"
