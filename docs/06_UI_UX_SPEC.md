@@ -1,7 +1,6 @@
 # 06 - UI / UX Spec
 
-The terminal UI should feel like a modern developer tool: keyboard-first, clean,
-dark-theme friendly, and fast. It should not feel like a basic text-prompt app.
+Since it is terminal based, Devs love that. It should feel like developer tool: keyboard-first, clean, dark-theme friendly, and fast. It should not feel like a basic text-prompt app.
 
 ## Interaction model
 

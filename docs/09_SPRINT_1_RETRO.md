@@ -10,8 +10,7 @@
 - **Sprint goal achieved** — all three committed stories (DVBRW-6, 7, 8; 13/13
   points) delivered and merged to `main`.
 - **Professional Git workflow** — one feature branch per story, a reviewed pull
-  request per story, small incremental commits referencing the Jira key. No
-  "big-bang" commits; history reads as a clear, iterative delivery.
+  request per story, small incremental commits referencing the Jira key. History reads as a clear, iterative delivery.
 - **CI/CD in place from the start** — GitHub Actions ran `ruff` + `pytest` on
   every pull request and blocked merges when red.
 - **Testable architecture** — the repository abstraction let 41 tests (unit +
@@ -34,23 +33,16 @@
 
 ## Action items for Sprint 2 (improvements)
 
-1. **Pin dependencies and verify CI-parity before pushing.** *(Already started —
-   dependency majors are now pinned in `pyproject.toml`.)* Going forward, run the
-   test suite in a clean virtual environment (a fresh `pip install -e ".[dev]"`),
-   not only the pre-populated dev environment, so version drift is caught locally
-   before CI. **Owner:** Developer. **Done when:** a clean-venv check passes before
-   each push.
+1. **Pin dependencies and verify CI-parity before pushing.** *
 
 2. **Agree the UI/UX direction before building a screen.** Sketch the target
    (a short ASCII mockup or a note) and confirm it with the stakeholder before
-   implementation, to avoid rebuilding screens. **Owner:** Developer + Stakeholder.
-   **Done when:** each new Sprint 2 screen has an agreed sketch before coding.
+   implementation, to avoid rebuilding screens. 
+    
 
 3. **Keep the Sprint Review feedback loop tight.** Turn stakeholder feedback into
    backlog items immediately (done this sprint: DVBRW-21 RWF currency, DVBRW-22
-   greeting) and pull them into Sprint 2 planning. **Owner:** Developer.
-   **Done when:** DVBRW-21 and DVBRW-22 are in the Sprint 2 backlog.
-
+   greeting) and pull them into Sprint 2 planning.
 ## Carried into Sprint 2
 
 - Apply improvements 1–3 above.
