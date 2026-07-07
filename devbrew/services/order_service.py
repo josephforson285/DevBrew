@@ -2,11 +2,14 @@
 
 from __future__ import annotations
 
+from devbrew.logging_config import get_logger
 from devbrew.models.cart import Cart
 from devbrew.models.delivery import DeliveryDetails
 from devbrew.models.order import Order
 from devbrew.models.user import User
 from devbrew.repositories.order_repository import InMemoryOrderRepository, OrderRepository
+
+_log = get_logger("order")
 
 
 class OrderService:
@@ -35,4 +38,18 @@ class OrderService:
         )
         self._repository.save(order)
         cart.clear()
+        _log.info(
+            "order created: %s user=%s total=%s status=%s",
+            order.id,
+            order.user_email,
+            order.total,
+            order.status,
+        )
+        return order
+
+    def update_status(self, order: Order, status: str) -> Order:
+        """Change an order's status and log the transition (used by tracking)."""
+        previous = order.status
+        order.status = status
+        _log.info("order status changed: %s %s -> %s", order.id, previous, status)
         return order
