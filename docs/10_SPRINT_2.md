@@ -36,3 +36,9 @@ Key points:
 1. DVBRW-21, DVBRW-22 - quick, high-value stakeholder items.
 2. DVBRW-9 → DVBRW-10 → DVBRW-11 - the order flow (cart → delivery → place & persist).
 3. DVBRW-18, DVBRW-19 - DevOps visibility (logging, health).
+
+<br><br>
+
+<b> Evidence of Sprint 2 jira workflow </b>
+<img width="1167" height="726" alt="image" src="https://github.com/user-attachments/assets/892a0eae-e914-422b-8b87-086d3914fe13" />
+
