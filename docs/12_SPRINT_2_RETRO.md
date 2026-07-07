@@ -8,7 +8,7 @@
 ## What went well
 
 - **Sprint goal achieved** - all seven stories (20/20 points) delivered and
-  merged to `main` via reviewed PRs, with green CI, first release has been made where users can install on their linux machine.
+  merged to `main` via reviewed PRs, with green CI, and also a CD with first release has been made where users can install on their linux machine.
 - **Sprint 1 improvements paid off.** Dependencies stayed pinned and each story
   was verified in a clean virtual environment before pushing - there was **no CI
   dependency drift this sprint**.
