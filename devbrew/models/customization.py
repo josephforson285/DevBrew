@@ -40,6 +40,15 @@ class CustomizedDrink:
     def price_label(self) -> str:
         return format_price(self.total_price)
 
+    @property
+    def descriptor(self) -> str:
+        """Short one-line description of the choices, e.g. 'M, Oat, Low sugar'."""
+        c = self.customization
+        parts = [c.size, c.milk, f"{c.sugar} sugar"]
+        if c.extra_shot:
+            parts.append("extra shot")
+        return ", ".join(parts)
+
     def summary_lines(self) -> list[str]:
         """Human-readable order summary lines."""
         c = self.customization
